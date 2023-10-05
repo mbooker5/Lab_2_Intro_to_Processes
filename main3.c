@@ -49,11 +49,12 @@ void  main(void)
        if (pid == 0){
         printf("Forking\n");
         ChildProcess();
-       } else {
+       } else if (pid < 0){
         printf("Error: Child processes could not be forked.\n");
         exit(0);
        }
      } 
-     ParentProcess();
      printf("ParentProcess\n");
+     ParentProcess();
+     
 }
